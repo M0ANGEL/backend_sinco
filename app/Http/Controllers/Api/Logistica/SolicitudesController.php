@@ -78,9 +78,6 @@ class SolicitudesController extends Controller
     }
 
     //generar pdf arp
-
-
-
     public function generarPDF(Request $request)
     {
         // Obtener resultados filtrados
@@ -153,6 +150,15 @@ class SolicitudesController extends Controller
 
         // Retornar PDF como descarga
         return $pdf->download("Solicitud_{$request->numeroTraslado}.pdf");
+    }
+
+    public function Prueba(){
+        $resultado = "prueba de controlador y respues local";
+
+        return response()->json([
+            'status' => 'success',
+            'data'   => $resultado
+        ]);
     }
 
 
