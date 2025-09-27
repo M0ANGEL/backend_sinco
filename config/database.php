@@ -80,17 +80,19 @@ return [
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', 'datamart.sincoerp.com'),
+            'port' => env('DB_PORT', '4263'),
+            'database' => env('DB_DATABASE', 'SincoProyelcoDW'),
+            'username' => env('DB_USERNAME', 'SincoProyelcoDW'),
+            'password' => env('DB_PASSWORD', 'SincoProyelcoDW.544.4011'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'encrypt' => env('DB_ENCRYPT', 'yes'),
-            'trust_server_certificate' => 'true',
+            'encrypt' => env('DB_ENCRYPT', 'yes'),  // opcional si tu SQL Server usa TLS
+            'trust_server_certificate' => true,     // <- debe ser booleano
+            'options' => [
+                PDO::ATTR_TIMEOUT => 60,            // tiempo de conexión en segundos
+            ],
         ],
 
 
