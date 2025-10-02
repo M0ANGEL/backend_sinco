@@ -88,10 +88,10 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'encrypt' => env('DB_ENCRYPT', 'yes'),  // opcional si tu SQL Server usa TLS
-            'trust_server_certificate' => true,     // <- debe ser booleano
+            'encrypt' => env('DB_ENCRYPT', 'yes'), // Laravel >=9 usa esto
+            'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', true), // debe ser booleano
             'options' => [
-                PDO::ATTR_TIMEOUT => 60,            // tiempo de conexión en segundos
+                PDO::ATTR_TIMEOUT => 60,
             ],
         ],
 
