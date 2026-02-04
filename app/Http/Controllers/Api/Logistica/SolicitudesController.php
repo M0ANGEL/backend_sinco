@@ -166,7 +166,7 @@ class SolicitudesController extends Controller
         $resultado = DB::connection('sqlsrv')
             ->table('ADP_DTM_DIM.Insumo')
             ->select(
-                'Insumo Codigo as codigo',
+                'Codigo Insumo as codigo',
                 'Insumo Descripcion as descripcion'
             )
             ->distinct()
