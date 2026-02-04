@@ -161,6 +161,23 @@ class SolicitudesController extends Controller
         ]);
     }
 
+    public function Insumos()
+    {
+        $resultado = DB::connection('sqlsrv')
+            ->table('ADP_DTM_VFACT.Insumos')
+            ->select(
+                'Insumo Codigo as codigo',
+                'Insumo Descripcion as descripcion'
+            )
+            ->distinct()
+            ->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data'   => $resultado
+        ]);
+    }
+
 
 
 }
