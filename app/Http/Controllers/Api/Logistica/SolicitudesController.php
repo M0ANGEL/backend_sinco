@@ -164,7 +164,7 @@ class SolicitudesController extends Controller
     public function Insumos()
     {
         $resultado = DB::connection('sqlsrv')
-            ->table('ADP_DTM_VFACT.Insumos')
+            ->table('ADP_DTM_DIM.Insumos')
             ->select(
                 'Insumo Codigo as codigo',
                 'Insumo Descripcion as descripcion'
